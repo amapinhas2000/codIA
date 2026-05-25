@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tecninfo - Escola Técnica de Informática líder. Cursos práticos de Desenvolvimento de Sistemas, Cibersegurança, Redes e IA com +95% de empregabilidade. Inscreva-se já!">
+  <meta name="keywords" content="curso tecnico informatica, desenvolvimento de sistemas, ciberseguranca, redes de computadores, inteligencia artificial, escola tecnica TI, programacao">
+  <meta name="author" content="Tecninfo">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tecninfo | Cursos Técnicos de Informática e Programação">
+  <meta property="og:description" content="Aprenda na prática e conquiste sua vaga no mercado de tecnologia com os cursos técnicos da Tecninfo.">
+  <meta property="og:image" content="assets/images/hero_tech_banner.png">
+
+  <title>Tecninfo | Escola Técnica de Informática e Programação</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+  <!-- Background Glow Effects -->
+  <div class="glow-blob blob-1"></div>
+  <div class="glow-blob blob-2"></div>
+  <div class="glow-blob blob-3"></div>
+
+  <!-- ==========================================================================
+     HEADER & NAVBAR
+     ========================================================================== -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top bg-glass" id="main-nav">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio" id="nav-brand">
+          <i class="fa-solid fa-laptop-code me-2 text-gradient"></i><span>Tecn</span>info
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" id="navbar-btn">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="#inicio" id="nav-link-inicio">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cursos" id="nav-link-cursos">Cursos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#diferenciais" id="nav-link-diferenciais">Diferenciais</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#depoimentos" id="nav-link-depoimentos">Depoimentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#faq" id="nav-link-faq">Dúvidas</a>
+            </li>
+            <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+              <a class="btn-cyber-primary text-center d-block d-lg-inline-block" href="#inscricao" id="nav-cta-btn">Quero Minha Vaga</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+    <section class="hero-section" id="inicio">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <!-- Text Content -->
+          <div class="col-lg-6">
+            <div class="hero-content">
+              <span class="section-tag" id="hero-badge-live">Inscrições Abertas - Turmas 2026</span>
+              <h1 class="hero-title text-white" id="hero-main-title">
+                Domine a Tecnologia. <br>
+                <span class="text-gradient">Construa seu Futuro.</span>
+              </h1>
+              <p class="hero-subtitle" id="hero-desc">
+                Faça um curso técnico na Tecninfo e aprenda na prática com professores do mercado. Metodologia ágil, laboratórios de última geração e inserção imediata no mercado de trabalho.
+              </p>
+              <div class="d-flex flex-sm-row flex-column gap-3">
+                <a href="#inscricao" class="btn-cyber-primary text-center" id="hero-cta-enroll">Matricule-se Agora</a>
+                <a href="#cursos" class="btn-cyber-outline text-center" id="hero-cta-courses">Conhecer os Cursos</a>
+              </div>
+            </div>
+          </div>
+          <!-- Creative Image Mockup -->
+          <div class="col-lg-6">
+            <div class="hero-image-container">
+              <!-- Floating Indicator 1 -->
+              <div class="floating-card floating-1 bg-glass border" id="float-card-1">
+                <div class="bg-success rounded-circle" style="width: 10px; height: 10px; box-shadow: 0 0 10px #10b981;"></div>
+                <div class="text-start">
+                  <span class="d-block fw-bold text-white" style="font-size: 0.8rem;">Aulas Práticas</span>
+                  <span class="d-block text-muted" style="font-size: 0.7rem;">Laboratórios Virtuais & Físicos</span>
+                </div>
+              </div>
+              
+              <!-- Floating Indicator 2 -->
+              <div class="floating-card floating-2 bg-glass border" id="float-card-2">
+                <div class="text-gradient-purple font-weight-bold" style="font-size: 1.2rem;"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="text-start">
+                  <span class="d-block fw-bold text-white" style="font-size: 0.8rem;">Cibersegurança</span>
+                  <span class="d-block text-muted" style="font-size: 0.7rem;">+ IA & Coding em Alta</span>
+                </div>
+              </div>
+
+              <!-- Main Banner Wrap -->
+              <div class="hero-image-wrapper">
+                <img src="assets/images/hero_tech_banner.png" alt="Ambiente futurista de TI com notebooks mostrando códigos, diagramas de rede e hologramas" class="img-fluid" id="hero-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       METRICS / STATS SECTION
+       ========================================================================== -->
+    <section class="metrics-section" id="metricas">
+      <div class="container">
+        <div class="row g-4">
+          
+          <div class="col-md-3 col-sm-6">
+            <div class="metric-card bg-glass border" id="metric-1">
+              <span class="metric-number counter" id="counter-employ" data-target="95">0%</span>
+              <p class="metric-title">Empregabilidade</p>
+              <p class="metric-desc">Alunos contratados em até 6 meses após a formação</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="metric-card bg-glass border" id="metric-2">
+              <span class="metric-number counter" id="counter-students" data-target="12000">0</span>
+              <p class="metric-title">Alunos Formados</p>
+              <p class="metric-desc">Profissionais capacitados e inseridos no mercado de TI</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="metric-card bg-glass border" id="metric-3">
+              <span class="metric-number text-gradient" id="counter-labs">8+</span>
+              <p class="metric-title">Labs Exclusivos</p>
+              <p class="metric-desc">Estruturas completas equipadas com softwares de última geração</p>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="metric-card bg-glass border" id="metric-4">
+              <span class="metric-number text-gradient" id="counter-partners">50+</span>
+              <p class="metric-title">Empresas Parceiras</p>
+              <p class="metric-desc">Estágios facilitados e contratação direta nas melhores empresas</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       COURSES SECTION
+       ========================================================================== -->
+    <section class="courses-section" id="cursos">
+      <div class="container">
+        <!-- Title and Intro -->
+        <div class="row justify-content-center mb-5 text-center">
+          <div class="col-lg-8">
+            <span class="section-tag" id="courses-badge">Capacitação Técnica</span>
+            <h2 class="text-white mb-3" style="font-size: 2.5rem;" id="courses-section-title">Cursos Técnicos de Elite</h2>
+            <p class="text-muted" id="courses-section-desc">
+              Escolha a trilha de aprendizado ideal para o seu perfil e atinja a independência profissional com nossos programas altamente alinhados com o mercado de tecnologia global.
+            </p>
+          </div>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="row g-4">
+          
+          <!-- Course 1: Desenvolvimento de Sistemas -->
+          <div class="col-lg-3 col-md-6">
+            <div class="course-card bg-glass border" id="course-dev">
+              <div class="course-header">
+                <div class="course-icon-wrapper" id="dev-icon">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <span class="course-badge">Mais Procurado</span>
+              </div>
+              <div class="course-body">
+                <h3 class="course-title" id="dev-title">Desenvolvimento de Sistemas</h3>
+                <p class="course-desc" id="dev-desc">
+                  Desenvolva aplicações web e mobile. Aprenda lógica de programação estruturada, orientação a objetos, bancos de dados, APIs e metodologias ágeis.
+                </p>
+                <div class="course-techs">
+                  <span class="tech-tag">HTML & CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">SQL</span>
+                </div>
+                <div class="course-footer">
+                  <div class="course-duration"><i class="fa-regular fa-clock text-gradient"></i> 18 Meses</div>
+                  <a href="#inscricao" class="course-link" id="dev-link">Matricule-se <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 2: Redes e Infraestrutura -->
+          <div class="col-lg-3 col-md-6">
+            <div class="course-card bg-glass border" id="course-networks">
+              <div class="course-header">
+                <div class="course-icon-wrapper" id="networks-icon">
+                  <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <span class="course-badge">Infraestrutura</span>
+              </div>
+              <div class="course-body">
+                <h3 class="course-title" id="networks-title">Redes de Computadores</h3>
+                <p class="course-desc" id="networks-desc">
+                  Gerencie ambientes de redes físicos e lógicos. Domine protocolos de comunicação, configurações de roteadores, switchs, sistemas Linux/Windows Server e Nuvem.
+                </p>
+                <div class="course-techs">
+                  <span class="tech-tag">Cisco CCNA</span>
+                  <span class="tech-tag">Linux OS</span>
+                  <span class="tech-tag">AWS Cloud</span>
+                  <span class="tech-tag">TCP/IP</span>
+                  <span class="tech-tag">Virtualização</span>
+                </div>
+                <div class="course-footer">
+                  <div class="course-duration"><i class="fa-regular fa-clock text-gradient"></i> 18 Meses</div>
+                  <a href="#inscricao" class="course-link" id="networks-link">Matricule-se <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 3: Cibersegurança -->
+          <div class="col-lg-3 col-md-6">
+            <div class="course-card bg-glass border" id="course-cyber">
+              <div class="course-header">
+                <div class="course-icon-wrapper" id="cyber-icon">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <span class="course-badge text-gradient-purple" style="background: rgba(139, 92, 246, 0.08); border-color: rgba(139, 92, 246, 0.2);">Tendência</span>
+              </div>
+              <div class="course-body">
+                <h3 class="course-title" id="cyber-title">Cibersegurança</h3>
+                <p class="course-desc" id="cyber-desc">
+                  Proteja infraestruturas críticas contra ataques cibernéticos. Aprenda testes de intrusão, hacking ético, criptografia, defesa ativa e conformidade regulatória (LGPD).
+                </p>
+                <div class="course-techs">
+                  <span class="tech-tag">Ethical Hacking</span>
+                  <span class="tech-tag">Wireshark</span>
+                  <span class="tech-tag">Cripto</span>
+                  <span class="tech-tag">Kali Linux</span>
+                  <span class="tech-tag">Firewalls</span>
+                </div>
+                <div class="course-footer">
+                  <div class="course-duration"><i class="fa-regular fa-clock text-gradient"></i> 18 Meses</div>
+                  <a href="#inscricao" class="course-link" id="cyber-link">Matricule-se <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course 4: Inteligência Artificial e Dados -->
+          <div class="col-lg-3 col-md-6">
+            <div class="course-card bg-glass border" id="course-ai">
+              <div class="course-header">
+                <div class="course-icon-wrapper" id="ai-icon">
+                  <i class="fa-solid fa-brain"></i>
+                </div>
+                <span class="course-badge">Futuro</span>
+              </div>
+              <div class="course-body">
+                <h3 class="course-title" id="ai-title">IA & Ciência de Dados</h3>
+                <p class="course-desc" id="ai-desc">
+                  Descubra os mistérios dos dados. Desenvolva modelos preditivos, configure redes neurais artificiais, automatize processos e analise grandes volumes de dados de negócios.
+                </p>
+                <div class="course-techs">
+                  <span class="tech-tag">Machine Learning</span>
+                  <span class="tech-tag">Python AI</span>
+                  <span class="tech-tag">Pandas</span>
+                  <span class="tech-tag">SQL Server</span>
+                  <span class="tech-tag">TensorFlow</span>
+                </div>
+                <div class="course-footer">
+                  <div class="course-duration"><i class="fa-regular fa-clock text-gradient"></i> 20 Meses</div>
+                  <a href="#inscricao" class="course-link" id="ai-link">Matricule-se <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       DIFFERENTIALS SECTION (INTERACTIVE TABS)
+       ========================================================================== -->
+    <section class="diff-section" id="diferenciais">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <!-- Text and Tabs selector -->
+          <div class="col-lg-5">
+            <span class="section-tag" id="diff-badge">Por que a Tecninfo?</span>
+            <h2 class="text-white mb-4" style="font-size: 2.5rem;" id="diff-section-title">Nossos Diferenciais de Ensino</h2>
+            <p class="text-muted mb-4" id="diff-section-desc">
+              Não somos uma escola comum. Focamos no desenvolvimento integral e na prontidão de nossos estudantes para enfrentar cenários e desafios reais de grandes empresas de TI.
+            </p>
+            
+            <div class="diff-tabs-container" id="diff-tabs">
+              <button class="diff-tab-btn active" data-target="#tab-infra" id="diff-tab-btn-1">
+                <i class="fa-solid fa-server"></i> Infraestrutura de Ponta
+              </button>
+              <button class="diff-tab-btn" data-target="#tab-method" id="diff-tab-btn-2">
+                <i class="fa-solid fa-puzzle-piece"></i> Metodologia Prática
+              </button>
+              <button class="diff-tab-btn" data-target="#tab-partners" id="diff-tab-btn-3">
+                <i class="fa-solid fa-handshake"></i> Parcerias Fortes
+              </button>
+              <button class="diff-tab-btn" data-target="#tab-certs" id="diff-tab-btn-4">
+                <i class="fa-solid fa-award"></i> Certificações de Mercado
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive Content Panel -->
+          <div class="col-lg-7">
+            <div class="bg-glass border diff-content-card" style="min-height: 480px;">
+              
+              <!-- Tab 1: Infraestrutura -->
+              <div class="diff-tab-content" id="tab-infra">
+                <div class="diff-content-icon" id="tab-infra-icon">
+                  <i class="fa-solid fa-server"></i>
+                </div>
+                <h3 class="diff-content-title text-white" id="tab-infra-title">Laboratórios que Inspiram Inovação</h3>
+                <p class="diff-content-desc" id="tab-infra-desc">
+                  Estude em laboratórios modernos equipados com computadores potentes, servidores de simulação dedicados e infraestrutura de rede Cisco de alto padrão.
+                </p>
+                <ul class="diff-list" id="tab-infra-list">
+                  <li>Computadores Core i7 com 32GB RAM e SSD NVMe de alta velocidade.</li>
+                  <li>Roteadores e Switchs Cisco corporativos para simulações reais de redes.</li>
+                  <li>Data Center local para testes dinâmicos de virtualização e DevOps.</li>
+                  <li>Ambiente refrigerado e 100% projetado para simular salas de operação.</li>
+                </ul>
+              </div>
+
+              <!-- Tab 2: Metodologia -->
+              <div class="diff-tab-content d-none" id="tab-method">
+                <div class="diff-content-icon text-gradient-purple" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.2);" id="tab-method-icon">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3 class="diff-content-title text-white" id="tab-method-title">Aprendizado Baseado em Projetos Reais (PBL)</h3>
+                <p class="diff-content-desc" id="tab-method-desc">
+                  Chega de teoria monótona e cansativa. Nossos estudantes trabalham em Squads ágeis utilizando metodologias como Scrum e Kanban para resolver problemas corporativos reais.
+                </p>
+                <ul class="diff-list" id="tab-method-list">
+                  <li>Desenvolvimento de projetos ao final de cada módulo do curso técnico.</li>
+                  <li>Trabalho colaborativo simulando a dinâmica diária de uma Software House.</li>
+                  <li>Apresentação de soluções (Pitches) para investidores e gestores convidados.</li>
+                  <li>Aulas dinâmicas com foco 90% prático ("mão na massa").</li>
+                </ul>
+              </div>
+
+              <!-- Tab 3: Parcerias -->
+              <div class="diff-tab-content d-none" id="tab-partners">
+                <div class="diff-content-icon" style="color: #34d399; background: rgba(52, 211, 153, 0.1); border-color: rgba(52, 211, 153, 0.2);" id="tab-partners-icon">
+                  <i class="fa-solid fa-handshake-angle"></i>
+                </div>
+                <h3 class="diff-content-title text-white" id="tab-partners-title">Conexão Estreita com Empresas Contratantes</h3>
+                <p class="diff-content-desc" id="tab-partners-desc">
+                  Nosso compromisso é o seu sucesso profissional. Mantemos parcerias e integrações ativas com os principais polos de tecnologia para acelerar o seu encaminhamento profissional.
+                </p>
+                <ul class="diff-list" id="tab-partners-list">
+                  <li>Feiras de carreiras periódicas exclusivas na Tecninfo.</li>
+                  <li>Encaminhamento de currículos direto para os times de Recrutamento (HR).</li>
+                  <li>Vagas de estágio e contratação exclusivas para alunos formados.</li>
+                  <li>Mentoria de carreira com executivos e engenheiros renomados do mercado.</li>
+                </ul>
+              </div>
+
+              <!-- Tab 4: Certificações -->
+              <div class="diff-tab-content d-none" id="tab-certs">
+                <div class="diff-content-icon" style="color: #fbbf24; background: rgba(251, 191, 36, 0.1); border-color: rgba(251, 191, 36, 0.2);" id="tab-certs-icon">
+                  <i class="fa-solid fa-certificate"></i>
+                </div>
+                <h3 class="diff-content-title text-white" id="tab-certs-title">Certificados Alinhados com os Grandes Fabricantes</h3>
+                <p class="diff-content-desc" id="tab-certs-desc">
+                  Além do diploma técnico oficial reconhecido nacionalmente pelo MEC, preparamos você com materiais oficiais e laboratórios focados nas principais certificações globais.
+                </p>
+                <ul class="diff-list" id="tab-certs-list">
+                  <li>Preparatório embutido para Cisco Certified Network Associate (CCNA).</li>
+                  <li>Simulações práticas voltadas para AWS Cloud Practitioner.</li>
+                  <li>Treinamentos alinhados com Linux Professional Institute (LPI).</li>
+                  <li>Certificados adicionais emitidos a cada competência adquirida.</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       TESTIMONIALS SECTION
+       ========================================================================== -->
+    <section class="testimonials-section" id="depoimentos">
+      <div class="container">
+        <!-- Title and Intro -->
+        <div class="row justify-content-center mb-5 text-center">
+          <div class="col-lg-8">
+            <span class="section-tag" id="test-badge">Quem se formou aprova</span>
+            <h2 class="text-white mb-3" style="font-size: 2.5rem;" id="test-section-title">Histórias de Transformação Real</h2>
+            <p class="text-muted" id="test-section-desc">
+              Conheça ex-alunos da Tecninfo que saíram do absoluto zero e hoje atuam construindo sistemas críticos e liderando equipes nas maiores potências tecnológicas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Carousel -->
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+          <!-- Indicators -->
+          <div class="carousel-indicators mb-0" style="bottom: -2.5rem;">
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" id="carousel-indicator-0"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2" id="carousel-indicator-1"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3" id="carousel-indicator-2"></button>
+          </div>
+
+          <!-- Slides -->
+          <div class="carousel-inner">
+            
+            <!-- Testimonial 1 -->
+            <div class="carousel-item active">
+              <div class="testimonial-card bg-glass border" id="test-card-1">
+                <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
+                <p class="testimonial-text" id="test-text-1">
+                  "O curso técnico da Tecninfo mudou totalmente os rumos da minha vida. Eu trabalhava em um mercado e não sabia nada de desenvolvimento. A metodologia com projetos práticos facilitou a minha fixação de conceitos complexos. Fui contratada como desenvolvedora backend antes mesmo de concluir o último módulo!"
+                </p>
+                <div class="testimonial-author">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150" alt="Foto de Mariana Silva, ex-aluna da Tecninfo" class="testimonial-avatar" id="test-avatar-1">
+                  <div class="text-start">
+                    <h4 class="testimonial-name" id="test-name-1">Mariana Silva</h4>
+                    <p class="testimonial-role" id="test-role-1">Dev Backend na <span class="testimonial-company">Google</span> | Formada em Sistemas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="carousel-item">
+              <div class="testimonial-card bg-glass border" id="test-card-2">
+                <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
+                <p class="testimonial-text" id="test-text-2">
+                  "Estudar infraestrutura e segurança sem laboratórios reais é impossível. O que mais me surpreendeu na Tecninfo foi a estrutura física da escola. Configurar switchs e roteadores físicos com o acompanhamento dos professores me deu a base sólida que eu precisava. Hoje gerencio equipes inteiras de redes globais."
+                </p>
+                <div class="testimonial-author">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150" alt="Foto de Lucas Mendes, ex-aluno da Tecninfo" class="testimonial-avatar" id="test-avatar-2">
+                  <div class="text-start">
+                    <h4 class="testimonial-name" id="test-name-2">Lucas Mendes</h4>
+                    <p class="testimonial-role" id="test-role-2">Engenheiro de Redes Sênior na <span class="testimonial-company">AWS</span> | Formado em Redes</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="carousel-item">
+              <div class="testimonial-card bg-glass border" id="test-card-3">
+                <i class="fa-solid fa-quote-left testimonial-quote-icon"></i>
+                <p class="testimonial-text" id="test-text-3">
+                  "Sempre tive paixão por hacker e invasões éticas, mas não sabia por onde começar. No curso de Cibersegurança, aprendi de forma responsável e guiada. A Tecninfo me ajudou a conseguir a minha primeira certificação LPI, abrindo as portas do mercado de segurança de dados em um banco global. O suporte deles é incrível!"
+                </p>
+                <div class="testimonial-author">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150" alt="Foto de Beatriz Rocha, ex-aluna da Tecninfo" class="testimonial-avatar" id="test-avatar-3">
+                  <div class="text-start">
+                    <h4 class="testimonial-name" id="test-name-3">Beatriz Rocha</h4>
+                    <p class="testimonial-role" id="test-role-3">Analista de Security SOC na <span class="testimonial-company">Itaú Unibanco</span> | Formada em Cibersegurança</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       FAQ SECTION
+       ========================================================================== -->
+    <section class="faq-section" id="faq">
+      <div class="container" style="max-width: 900px;">
+        <!-- Title and Intro -->
+        <div class="row justify-content-center mb-5 text-center">
+          <div class="col-lg-10">
+            <span class="section-tag" id="faq-badge">Central de Dúvidas</span>
+            <h2 class="text-white mb-3" style="font-size: 2.5rem;" id="faq-section-title">Perguntas Frequentes</h2>
+            <p class="text-muted" id="faq-section-desc">
+              Tem alguma dúvida sobre matrícula, horários, certificação ou pré-requisitos? Separamos as dúvidas mais recorrentes de nossos alunos para ajudar você.
+            </p>
+          </div>
+        </div>
+
+        <!-- Accordion Bootstrap -->
+        <div class="accordion" id="accordionFAQ">
+          
+          <div class="accordion-item" id="faq-item-1">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="faq-btn-1">
+                Preciso ter conhecimento prévio em programação para começar?
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+              <div class="accordion-body" id="faq-body-1">
+                <strong>Absolutamente não!</strong> Nossos cursos técnicos são estruturados do básico ao avançado. Começamos abordando desde conceitos fundamentais de lógica e arquitetura de computadores até a engenharia e frameworks de TI de alta demanda. O único pré-requisito é ter paixão por aprender e dedicação.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="faq-item-2">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="faq-btn-2">
+                Os cursos técnicos da Tecninfo são reconhecidos pelo MEC?
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+              <div class="accordion-body" id="faq-body-2">
+                <strong>Sim, plenamente reconhecidos.</strong> Todos os nossos diplomas técnicos emitidos têm total autoridade legal e validade nacional perante o Ministério da Educação (MEC), permitindo que você preste concursos públicos, assuma responsabilidades técnicas ou prossiga para pós-graduações e graduações normalmente.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="faq-item-3">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="faq-btn-3">
+                Existem turmas no período noturno ou opções aos fins de semana?
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+              <div class="accordion-body" id="faq-body-3">
+                <strong>Sim, temos total flexibilidade de horários.</strong> Oferecemos turmas em três turnos: Matutino (08h às 11h30), Vespertino (14h às 17h30) e Noturno (19h às 22h30). Além disso, temos opções exclusivas de aulas dinâmicas aos sábados para quem precisa conciliar os estudos técnicos com a rotina de trabalho semanal.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" id="faq-item-4">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="faq-btn-4">
+                Como funciona a garantia e encaminhamento de estágio?
+              </button>
+            </h3>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+              <div class="accordion-body" id="faq-body-4">
+                A Tecninfo conta com um **setor de empregabilidade ativa**. A partir do segundo módulo, você passa a receber alertas de oportunidades exclusivas de empresas parceiras, treinamentos práticos de entrevista técnica e simulações. Nossa ponte ativa é o que garante que 95% de nossos formandos entrem no mercado de imediato.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       FORM SECTION (PRE-ENROLLMENT)
+       ========================================================================== -->
+    <section class="enroll-section" id="inscricao">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <!-- Text and Benefits -->
+          <div class="col-lg-6">
+            <div class="enroll-benefits-content">
+              <span class="section-tag" id="enroll-badge">Reserve sua vaga</span>
+              <h2 class="text-white mb-4" style="font-size: 2.5rem;" id="enroll-section-title">Inicie sua Jornada em TI Hoje</h2>
+              <p class="text-muted mb-4" id="enroll-section-desc">
+                Não deixe para depois. O mercado de tecnologia tem milhares de vagas ociosas esperando por profissionais qualificados. Preencha seus dados para garantir a pré-matrícula e receber o contato de um consultor de carreiras com descontos especiais de lançamento.
+              </p>
+              
+              <div class="d-flex align-items-start gap-3 mb-4" id="enroll-benefit-1">
+                <div class="text-gradient fs-3 mt-1"><i class="fa-solid fa-circle-check"></i></div>
+                <div>
+                  <h4 class="text-white mb-1" style="font-size: 1.15rem;">Pré-Inscrição Sem Compromisso</h4>
+                  <p class="text-muted mb-0" style="font-size: 0.92rem;">Sua pré-matrícula garante preferência de horários e condições especiais, sem qualquer custo de bloqueio.</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 mb-4" id="enroll-benefit-2">
+                <div class="text-gradient fs-3 mt-1"><i class="fa-solid fa-gift"></i></div>
+                <div>
+                  <h4 class="text-white mb-1" style="font-size: 1.15rem;">Isenção Total de Matrícula</h4>
+                  <p class="text-muted mb-0" style="font-size: 0.92rem;">Inscritos pela nossa landing page oficial ganham desconto exclusivo de 100% no valor da taxa de matrícula.</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3" id="enroll-benefit-3">
+                <div class="text-gradient fs-3 mt-1"><i class="fa-solid fa-book-open"></i></div>
+                <div>
+                  <h4 class="text-white mb-1" style="font-size: 1.15rem;">Material Didático Digital Gratuito</h4>
+                  <p class="text-muted mb-0" style="font-size: 0.92rem;">Acesso garantido a toda a plataforma online da Tecninfo e bibliografia técnica sem cobranças adicionais.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Glassmorphic Enrollment Form Card -->
+          <div class="col-lg-6">
+            <div class="bg-glass border enroll-form-card" id="enroll-card">
+              <h3 class="text-white text-center mb-4" style="font-size: 1.75rem;" id="enroll-card-title">Preencha seus Dados</h3>
+              
+              <form id="enrollmentForm" novalidate>
+                
+                <!-- Name Field -->
+                <div class="form-group">
+                  <label for="name" class="form-label">Nome Completo</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome completo">
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                  <label for="email" class="form-label">E-mail de Contato</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="seuemail@provedor.com">
+                </div>
+
+                <!-- WhatsApp Field -->
+                <div class="form-group">
+                  <label for="phone" class="form-label">WhatsApp / Telefone</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" placeholder="(11) 99999-9999">
+                </div>
+
+                <!-- Selected Course Field -->
+                <div class="form-group">
+                  <label for="course" class="form-label">Curso de Interesse</label>
+                  <select class="form-select" id="course" name="course">
+                    <option value="" selected disabled>Escolha sua trilha técnica...</option>
+                    <option value="dev">Técnico em Desenvolvimento de Sistemas</option>
+                    <option value="net">Técnico em Redes de Computadores</option>
+                    <option value="cyber">Técnico em Cibersegurança</option>
+                    <option value="ai">Técnico em IA & Ciência de Dados</option>
+                  </select>
+                </div>
+
+                <!-- Terms and Privacy Check -->
+                <div class="form-check form-group mb-4">
+                  <input class="form-check-input" type="checkbox" id="privacy" name="privacy">
+                  <label class="form-check-label" for="privacy">
+                    Aceito os <a href="#" class="text-gradient" style="text-decoration: underline;">Termos de Uso</a> e autorizo o envio de informativos de matrículas.
+                  </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-cyber-primary w-100 py-3" id="form-submit-btn">
+                  Garantir Minha Pré-Matrícula
+                </button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row gy-5">
+        
+        <!-- About column -->
+        <div class="col-lg-4 col-md-6">
+          <a class="footer-logo" href="#inicio" id="footer-brand">
+            <i class="fa-solid fa-laptop-code me-2 text-gradient"></i><span>Tecn</span>info
+          </a>
+          <p class="footer-text" id="footer-desc">
+            Escola técnica credenciada focada no ensino prático de ponta, liderando a formação de engenheiros e cientistas no Brasil.
+          </p>
+          <div class="footer-social-links" id="footer-social">
+            <a href="#" class="social-btn" aria-label="Acessar Instagram Tecninfo"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="Acessar LinkedIn Tecninfo"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn" aria-label="Acessar Facebook Tecninfo"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" aria-label="Acessar YouTube Tecninfo"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Links column -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4 class="footer-heading" id="footer-links-title">Navegação</h4>
+          <ul class="footer-links" id="footer-nav-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#cursos">Cursos Técnicos</a></li>
+            <li><a href="#diferenciais">Nossos Diferenciais</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#faq">Perguntas Comuns</a></li>
+          </ul>
+        </div>
+
+        <!-- Courses links column -->
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4 class="footer-heading" id="footer-courses-title">Cursos Técnicos</h4>
+          <ul class="footer-links" id="footer-courses-list">
+            <li><a href="#cursos">Desenvolvimento de Sistemas</a></li>
+            <li><a href="#cursos">Redes de Computadores</a></li>
+            <li><a href="#cursos">Cibersegurança</a></li>
+            <li><a href="#cursos">IA & Ciência de Dados</a></li>
+          </ul>
+        </div>
+
+        <!-- Info / Newsletter Column -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading" id="footer-newsletter-title">Contato & News</h4>
+          <ul class="footer-info mb-4" id="footer-info-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Av. Paulista, 1000 - Bela Vista<br>São Paulo - SP, CEP 01310-100</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>(11) 3456-7890 / 91234-5678</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>contato@tecninfo.com.br</span>
+            </li>
+          </ul>
+          
+          <form id="newsletterForm">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Seu e-mail..." aria-label="Cadastrar e-mail para newsletter" required>
+              <button class="btn-cyber-primary" type="submit" style="border-radius: 0 8px 8px 0; padding: 0.5rem 1rem;" aria-label="Enviar newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom -->
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="footer-bottom">
+            <p class="footer-copy" id="footer-copy-text">
+              &copy; 2026 Tecninfo - Escola Técnica de Informática Ltda. Todos os direitos reservados. CNPJ: 12.345.678/0001-90.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+     SUCCESS MODAL (POPUP APÓS ENVIO VÁLIDO)
+     ========================================================================== -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close-custom ms-auto" data-bs-dismiss="modal" aria-label="Fechar modal de sucesso" id="modal-close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="success-icon-wrapper" id="modal-icon">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h2 class="modal-title-custom" id="successModalLabel">Inscrição Garantida!</h2>
+          <p class="modal-desc-custom" id="modal-subtext">
+            Parabéns! Sua pré-matrícula foi enviada com sucesso para nossos servidores. Um consultor de carreiras da Tecninfo entrará em contato em breve pelo WhatsApp.
+          </p>
+          
+          <!-- Student / Course Details Summary Box -->
+          <div class="success-details" id="modal-summary-box">
+            <div class="success-detail-row">
+              <span class="success-detail-label">Estudante:</span>
+              <span class="success-detail-value" id="modal-student-name">-</span>
+            </div>
+            <div class="success-detail-row">
+              <span class="success-detail-label">E-mail:</span>
+              <span class="success-detail-value" id="modal-student-email">-</span>
+            </div>
+            <div class="success-detail-row">
+              <span class="success-detail-label">WhatsApp:</span>
+              <span class="success-detail-value" id="modal-student-phone">-</span>
+            </div>
+            <div class="success-detail-row">
+              <span class="success-detail-label">Curso Escolhido:</span>
+              <span class="success-detail-value text-gradient" id="modal-student-course">-</span>
+            </div>
+          </div>
+          
+          <button type="button" class="btn-cyber-primary w-100 py-3" data-bs-dismiss="modal" id="modal-ok-btn">
+            Entendido, obrigado!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+     SCRIPTS & DEPENDENCIES
+     ========================================================================== -->
+  <!-- jQuery 3.7.1 CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap 5 JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Custom Main JS -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
