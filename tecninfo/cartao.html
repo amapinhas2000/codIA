@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cartão de Visitas Virtual - Lucas Alencar, Engenheiro de Software Sênior.">
+  <title>Cartão Virtual | Lucas Alencar</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
+  <!-- Google Fonts - Plus Jakarta Sans, Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons CDN para ícones sociais de altíssima qualidade -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- CSS Customizado do Cartão -->
+  <link rel="stylesheet" href="css/cartao.css">
+</head>
+<body>
+
+  <!-- Elemento de Fundo Decorativo Dinâmico (Blobs / Dunas) -->
+  <div class="decor-background">
+    <div class="bg-blob blob-primary"></div>
+    <div class="bg-blob blob-secondary"></div>
+    <div class="bg-blob blob-tertiary"></div>
+  </div>
+
+  <!-- Botão Flutuante de Alternância de Tema -->
+  <div class="theme-switcher-wrapper">
+    <button id="btn-theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema visual">
+      <i class="fa-solid fa-moon icon-dark" aria-hidden="true"></i>
+      <i class="fa-solid fa-sun icon-light" aria-hidden="true"></i>
+      <span class="switcher-text">Mudar Estilo</span>
+    </button>
+  </div>
+
+  <main class="card-wrapper">
+    <div class="virtual-card">
+      
+      <!-- Cabeçalho do Cartão: Foto e Título -->
+      <div class="card-header">
+        <div class="profile-pic-container">
+          <div class="profile-glow"></div>
+          <img src="assets/images/profile_engineer.png" alt="Foto de Lucas Alencar" class="profile-img">
+          <div class="status-indicator" title="Disponível para projetos"></div>
+        </div>
+        
+        <h1 class="profile-name">Lucas Alencar</h1>
+        <p class="profile-title">Engenheiro de Software Sênior</p>
+        <span class="profile-tag">Full Stack & AI Solutions</span>
+      </div>
+
+      <!-- Corpo do Cartão: Contatos e Informações -->
+      <div class="card-body">
+        
+        <!-- Pequena Bio -->
+        <p class="profile-bio">
+          Especialista em projetar arquiteturas escaláveis, microsserviços robustos e interfaces de alta fidelidade com micro-interações. Focado na integração de Inteligência Artificial para otimização de produtos digitais.
+        </p>
+
+        <!-- Grade de Canais de Contato Rápido -->
+        <div class="contact-channels">
+          <a href="https://wa.me/5511987654321" target="_blank" class="contact-item" id="contact-whatsapp" aria-label="Chamar no WhatsApp">
+            <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
+            <span class="contact-text">+55 (11) 98765-4321</span>
+          </a>
+          
+          <a href="mailto:lucas.alencar@tecninfo.com.br" class="contact-item" id="contact-email" aria-label="Enviar E-mail">
+            <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
+            <span class="contact-text">lucas.alencar@tecninfo.com.br</span>
+          </a>
+
+          <a href="#" class="contact-item" id="contact-github" aria-label="Ver GitHub">
+            <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
+            <span class="contact-text">github.com/lucasalencar</span>
+          </a>
+
+          <a href="#" class="contact-item" id="contact-linkedin" aria-label="Acessar LinkedIn">
+            <span class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></span>
+            <span class="contact-text">linkedin.com/in/lucasalencar</span>
+          </a>
+        </div>
+
+        <!-- Seção de Habilidades Técnicas -->
+        <div class="skills-section">
+          <h2 class="section-title">Habilidades Dominadas</h2>
+          <div class="skills-grid">
+            <span class="skill-tag" style="--skill-idx: 1;"><i class="fa-brands fa-react text-cyan"></i> React & Next.js</span>
+            <span class="skill-tag" style="--skill-idx: 2;"><i class="fa-brands fa-js text-yellow"></i> TypeScript</span>
+            <span class="skill-tag" style="--skill-idx: 3;"><i class="fa-brands fa-node-js text-green"></i> Node.js & NestJS</span>
+            <span class="skill-tag" style="--skill-idx: 4;"><i class="fa-brands fa-python text-blue"></i> Python & FastAPI</span>
+            <span class="skill-tag" style="--skill-idx: 5;"><i class="fa-solid fa-brain text-purple"></i> LLMs & RAG</span>
+            <span class="skill-tag" style="--skill-idx: 6;"><i class="fa-solid fa-cloud text-indigo"></i> Cloud (GCP/AWS)</span>
+            <span class="skill-tag" style="--skill-idx: 7;"><i class="fa-solid fa-database text-bronze"></i> PostgreSQL & Redis</span>
+            <span class="skill-tag" style="--skill-idx: 8;"><i class="fa-solid fa-terminal text-orange"></i> Docker & CI/CD</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé do Cartão: Ações Úteis -->
+      <div class="card-footer">
+        <button id="btn-copy-contact" class="btn-action-primary">
+          <i class="fa-solid fa-copy me-2 icon-default"></i>
+          <i class="fa-solid fa-check me-2 icon-success" style="display: none;"></i>
+          <span class="btn-text">Copiar Todos os Contatos</span>
+        </button>
+        
+        <a href="index.html" class="btn-action-secondary">
+          <i class="fa-solid fa-arrow-left me-2"></i> Voltar à Home
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Lógica Interativa para Troca de Temas e Cópia de Dados -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggleBtn = document.getElementById('btn-theme-toggle');
+      const copyContactBtn = document.getElementById('btn-copy-contact');
+      const body = document.body;
+
+      // 1. Lógica do Alternador de Tema (Dual-Theme conforme design.md)
+      // Recupera tema salvo ou padrão do sistema (padrão é escuro cyberpunk)
+      const savedTheme = localStorage.getItem('virtual-card-theme');
+      if (savedTheme === 'sand') {
+        body.classList.add('theme-sand');
+      }
+
+      themeToggleBtn.addEventListener('click', () => {
+        const isSand = body.classList.toggle('theme-sand');
+        localStorage.setItem('virtual-card-theme', isSand ? 'sand' : 'cyberpunk');
+        
+        // Pequena vibração no celular para feedback táctil (opcional)
+        if (navigator.vibrate) {
+          navigator.vibrate(20);
+        }
+      });
+
+      // 2. Lógica para copiar dados de contato para a Área de Transferência
+      copyContactBtn.addEventListener('click', () => {
+        const email = "lucas.alencar@tecninfo.com.br";
+        const telefone = "+55 (11) 98765-4321";
+        const linkedin = "https://linkedin.com/in/lucasalencar";
+        
+        const textoParaCopiar = `Lucas Alencar - Engenheiro de Software Sênior\n📞 Telefone: ${telefone}\n✉️ E-mail: ${email}\n🔗 LinkedIn: ${linkedin}`;
+
+        navigator.clipboard.writeText(textoParaCopiar).then(() => {
+          const btnText = copyContactBtn.querySelector('.btn-text');
+          const iconDefault = copyContactBtn.querySelector('.icon-default');
+          const iconSuccess = copyContactBtn.querySelector('.icon-success');
+
+          // Altera botão para feedback de sucesso
+          copyContactBtn.classList.add('btn-success-active');
+          btnText.textContent = "Contatos Copiados!";
+          iconDefault.style.display = 'none';
+          iconSuccess.style.display = 'inline-block';
+
+          // Retorna ao estado original após 2 segundos
+          setTimeout(() => {
+            copyContactBtn.classList.remove('btn-success-active');
+            btnText.textContent = "Copiar Todos os Contatos";
+            iconDefault.style.display = 'inline-block';
+            iconSuccess.style.display = 'none';
+          }, 2000);
+        }).catch(err => {
+          console.error("Falha ao copiar dados: ", err);
+          alert("Não foi possível copiar os dados automaticamente. E-mail: " + email);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

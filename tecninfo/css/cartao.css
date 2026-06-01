@@ -1,0 +1,655 @@
+/* ==========================================================================
+   SISTEMA DE DESIGN DINÂMICO (DUAL-THEME) - CARTÃO VIRTUAL
+   ========================================================================== */
+
+:root {
+  /* ==========================================
+     TEMA DEFAULT: CYBERPUNK SPACE (ESCÚRO)
+     ========================================== */
+  --bg-page: #0b0f19;            /* Deep Space Dark */
+  --bg-card: rgba(22, 30, 49, 0.75); /* Translucent Glass Card */
+  --bg-input: rgba(30, 41, 59, 0.5);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-focus: #38bdf8;
+  --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.4);
+  
+  /* Cores de Destaque */
+  --color-primary: #38bdf8;      /* Electric Cyan */
+  --color-secondary: #8b5cf6;    /* Neon Purple */
+  --color-accent: #6366f1;       /* Cyber Indigo */
+  --color-success: #10b981;      /* Verde Esmeralda */
+  
+  /* Tipografia */
+  --text-main: #f8fafc;          /* Off-white */
+  --text-muted: #94a3b8;         /* Slate Gray */
+  --text-link: #38bdf8;
+  
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Layout */
+  --border-radius-lg: 24px;
+  --border-radius-md: 14px;
+  --border-radius-sm: 8px;
+  
+  /* Efeitos e Filtros */
+  --backdrop-blur: blur(16px);
+  --glass-overlay: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  
+  /* Transições */
+  --transition-normal: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================
+   MODIFICADOR DE TEMA: WARM SAND LIGHT (CLARO)
+   ========================================== */
+body.theme-sand {
+  --bg-page: #f9f6f0;            /* Alabastro Quente / Areia Suave */
+  --bg-card: #ffffff;            /* Branco Alabastro */
+  --bg-input: #fcfbfa;           /* Creme Claro */
+  --border-color: #ebdcc8;       /* Borda Bege Areia */
+  --border-focus: #bf9a78;       /* Bronze Areia */
+  --shadow-soft: 0 10px 30px rgba(140, 106, 74, 0.06), 0 30px 60px rgba(140, 106, 74, 0.12);
+  
+  /* Cores de Destaque Sand */
+  --color-primary: #bf9a78;      /* Desert Gold */
+  --color-secondary: #8c6a4a;    /* Coffee Earth */
+  --color-accent: #d48d57;       /* Terracota */
+  --color-success: #606c38;      /* Verde Oliva */
+  
+  /* Tipografia */
+  --text-main: #2b2721;          /* Espresso Cinza Café */
+  --text-muted: #7c756c;         /* Cinza Terra */
+  --text-link: #8c6a4a;
+  
+  --font-display: 'Outfit', sans-serif;
+  
+  --backdrop-blur: none;
+  --glass-overlay: none;
+}
+
+/* ==========================================================================
+   CONFIGURAÇÃO GERAL
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.5;
+  transition: background-color 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ==========================================================================
+   ELEMENTOS DE FUNDO DINÂMICOS (DUNAS / TECH BLOBS)
+   ========================================================================== */
+.decor-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  transition: var(--transition-normal), background-color 0.8s ease;
+}
+
+/* Tamanhos e posições das formas flutuantes */
+.blob-primary {
+  width: 500px;
+  height: 500px;
+  top: -150px;
+  left: -100px;
+  animation: floatEffect 20s infinite alternate ease-in-out;
+}
+
+.blob-secondary {
+  width: 600px;
+  height: 600px;
+  bottom: -200px;
+  right: -100px;
+  animation: floatEffect 25s infinite alternate-reverse ease-in-out;
+}
+
+.blob-tertiary {
+  width: 400px;
+  height: 400px;
+  top: 30%;
+  left: 40%;
+  opacity: 0.5;
+}
+
+/* Cores dinâmicas dos Blobs dependendo do Tema ativo */
+/* Cyberpunk Escuro */
+.blob-primary { background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0,0,0,0) 70%); }
+.blob-secondary { background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(0,0,0,0) 70%); }
+.blob-tertiary { background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0,0,0,0) 70%); }
+
+/* Sand Claro (Mais opaco, simulando dunas de areia) */
+body.theme-sand .blob-primary {
+  background: radial-gradient(circle, var(--color-primary-light) 0%, rgba(244, 234, 224, 0) 70%);
+  border-radius: 43% 57% 41% 59% / 60% 40% 60% 40%;
+  opacity: 0.7;
+}
+body.theme-sand .blob-secondary {
+  background: radial-gradient(circle, #f0e6d6 0%, rgba(240, 230, 214, 0) 70%);
+  border-radius: 50% 45% 48% 52% / 40% 60% 40% 60%;
+  opacity: 0.6;
+}
+body.theme-sand .blob-tertiary {
+  background: radial-gradient(circle, #ebdcc8 0%, rgba(235, 220, 200, 0) 70%);
+  opacity: 0.3;
+}
+
+@keyframes floatEffect {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  100% { transform: translate(30px, 40px) rotate(10deg) scale(1.05); }
+}
+
+/* ==========================================================================
+   BOTÃO DE ALTERNÂNCIA DE TEMA (SWITCHER FLUTUANTE)
+   ========================================================================== */
+.theme-switcher-wrapper {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 100;
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  outline: none;
+}
+
+/* Efeito Hover do Alternador */
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.15);
+}
+
+body.theme-sand .theme-toggle-btn:hover {
+  box-shadow: 0 4px 15px rgba(191, 154, 120, 0.2);
+}
+
+/* Alternância dos ícones Sol / Lua */
+.theme-toggle-btn .icon-light { display: none; }
+.theme-toggle-btn .icon-dark { display: inline-block; }
+
+body.theme-sand .theme-toggle-btn .icon-light { display: inline-block; color: #ff9800; }
+body.theme-sand .theme-toggle-btn .icon-dark { display: none; }
+
+/* ==========================================================================
+   CONTAINER DO CARTÃO E ESTRUTURA PRINCIPAL
+   ========================================================================== */
+.card-wrapper {
+  width: 100%;
+  max-width: 440px;
+  padding: 24px;
+  z-index: 10;
+  animation: cardFadeIn 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(40px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.virtual-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-normal), background-color 0.8s ease, border-color 0.8s ease;
+}
+
+/* Glassmorphism Condicional no Cyberpunk */
+body:not(.theme-sand) .virtual-card {
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  background-image: var(--glass-overlay);
+}
+
+/* Faixa Superior Decorativa */
+.virtual-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+}
+
+/* ==========================================================================
+   CABECALHO DO CARTAO (FOTO, NOME, TAGS)
+   ========================================================================== */
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Container da Foto de Perfil com Animações */
+.profile-pic-container {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin-bottom: 18px;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+  border: 2px solid var(--border-color);
+  position: relative;
+  z-index: 2;
+  background-color: var(--bg-input);
+  transition: var(--transition-normal);
+}
+
+/* Brilho pulsante no Cyberpunk */
+.profile-glow {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  z-index: 1;
+  opacity: 0.7;
+  filter: blur(4px);
+  animation: glowPulse 3s infinite alternate ease-in-out;
+  transition: var(--transition-normal);
+}
+
+body.theme-sand .profile-glow {
+  opacity: 0.15;
+  filter: none;
+  background: var(--color-primary);
+  animation: none;
+}
+
+body.theme-sand .profile-img {
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+}
+
+body.theme-sand .profile-glow {
+  border-radius: 50%;
+}
+
+@keyframes glowPulse {
+  0% { transform: scale(0.98); opacity: 0.6; filter: blur(4px); }
+  100% { transform: scale(1.03); opacity: 0.9; filter: blur(8px); }
+}
+
+/* Indicador de Status Online */
+.status-indicator {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-success);
+  border: 3px solid var(--bg-card);
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+body.theme-sand .status-indicator {
+  box-shadow: none;
+  background-color: #606c38;
+}
+
+/* Nomes e Cargos */
+.profile-name {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  transition: var(--transition-normal);
+}
+
+.profile-title {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+  transition: var(--transition-normal);
+}
+
+/* Badge Técnica */
+.profile-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: var(--color-primary);
+  border-radius: 50px;
+  transition: var(--transition-normal);
+}
+
+body.theme-sand .profile-tag {
+  background: var(--color-primary-light);
+  border-color: transparent;
+  color: var(--color-secondary);
+}
+
+/* ==========================================================================
+   CORPO DO CARTÃO (BIO & CONTATOS)
+   ========================================================================== */
+.profile-bio {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Grade de Canais de Contato */
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition-normal);
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  margin-right: 12px;
+  transition: var(--transition-fast);
+}
+
+.contact-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hover nos Contatos */
+.contact-item:hover {
+  transform: translateX(4px);
+  border-color: var(--color-primary);
+  background: rgba(56, 189, 248, 0.04);
+}
+
+body.theme-sand .contact-item:hover {
+  background: var(--color-primary-light);
+}
+
+.contact-item:hover .contact-icon {
+  transform: scale(1.15);
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
+   SEÇÃO DE HABILIDADES TÉCNICAS (STAGGERED ENTRANCE)
+   ========================================================================== */
+.skills-section {
+  margin-top: 8px;
+  margin-bottom: 28px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Linha sutil sob o título da seção */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+/* Grade de Skills */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Tag de Skill com Entrada Escalonada */
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+  transition: var(--transition-normal);
+  
+  /* Animação Staggered */
+  animation: tagEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--skill-idx) * 0.06s);
+}
+
+@keyframes tagEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Hover nas Tags de Skill */
+.skill-tag:hover {
+  border-color: var(--color-primary);
+  background-color: var(--bg-card);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(56, 189, 248, 0.08);
+}
+
+body.theme-sand .skill-tag:hover {
+  box-shadow: 0 4px 10px rgba(191, 154, 120, 0.15);
+}
+
+/* Cores específicas de ícones no Cyberpunk */
+.text-cyan { color: #00f0ff; }
+.text-yellow { color: #f7df1e; }
+.text-green { color: #390; }
+.text-blue { color: #3776ab; }
+.text-purple { color: #d373ff; }
+.text-indigo { color: #818cf8; }
+.text-bronze { color: #b18c64; }
+.text-orange { color: #ff5722; }
+
+body.theme-sand .skill-tag i {
+  /* No tema areia, os ícones de habilidades adotam tons terrosos */
+  color: var(--color-secondary) !important;
+}
+
+/* ==========================================================================
+   RODAPÉ DO CARTÃO (AÇÕES)
+   ========================================================================== */
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Botão Primário (Copiar Contatos) */
+.btn-action-primary {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition-normal);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+  outline: none;
+}
+
+.btn-action-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35);
+}
+
+body.theme-sand .btn-action-primary {
+  background: var(--color-primary-dark);
+  box-shadow: 0 4px 12px rgba(140, 106, 74, 0.2);
+}
+
+body.theme-sand .btn-action-primary:hover {
+  background: var(--color-primary);
+  box-shadow: 0 6px 18px rgba(191, 154, 120, 0.3);
+}
+
+/* Estado de Sucesso ao Copiar */
+.btn-action-primary.btn-success-active {
+  background: var(--color-success) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+}
+
+body.theme-sand .btn-action-primary.btn-success-active {
+  background: #606c38 !important;
+  box-shadow: 0 4px 12px rgba(96, 108, 56, 0.3) !important;
+}
+
+/* Botão Secundário (Voltar à Home) */
+.btn-action-secondary {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition-normal);
+}
+
+.btn-action-secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+body.theme-sand .btn-action-secondary:hover {
+  background: var(--bg-page);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE OPTIMIZATION)
+   ========================================================================== */
+@media (max-width: 440px) {
+  .virtual-card {
+    padding: 32px 20px;
+    border-radius: var(--border-radius-md);
+  }
+  
+  .profile-name {
+    font-size: 1.5rem;
+  }
+  
+  .contact-item {
+    padding: 12px 14px;
+    font-size: 0.82rem;
+  }
+  
+  .contact-icon {
+    font-size: 1rem;
+    margin-right: 8px;
+  }
+}

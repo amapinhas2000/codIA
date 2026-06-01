@@ -1,0 +1,643 @@
+/* ==========================================================================
+   MINIMALIST & MODERN SAND DESIGN SYSTEM - LOGIN PAGE
+   ========================================================================== */
+
+:root {
+  /* Cores - Paleta Sand / Bege Contrastante */
+  --bg-page: #f9f6f0;            /* Alabastro Quente / Areia Suave */
+  --bg-card: #ffffff;            /* Branco Puro para contraste elevado */
+  --bg-input: #fcfbfa;           /* Off-white quente e limpo */
+  
+  --color-primary: #bf9a78;      /* Ouro do Deserto / Bronze Areia */
+  --color-primary-dark: #8c6a4a; /* Argila / Espresso Suave */
+  --color-primary-light: #f4eae0;/* Tom de areia iluminada */
+  --color-accent: #d48d57;       /* Terracota Suave (Destaques secundários) */
+  
+  --text-main: #2b2721;          /* Cinza Café Profundo (Excelente legibilidade) */
+  --text-muted: #7c756c;         /* Cinza Terra Mútuo */
+  --text-link: #8c6a4a;          /* Links em tom terra */
+  
+  --border-color: #ebdcc8;       /* Borda areia bem sutil */
+  --border-focus: #bf9a78;       /* Borda de foco dourada */
+  --error-color: #d95d39;        /* Vermelho Terracota para erros */
+  --success-color: #606c38;      /* Verde Oliva para sucesso */
+  
+  /* Tipografia */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  
+  /* Transições e Efeitos */
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-slow: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+  --shadow-soft: 0 4px 20px rgba(140, 106, 74, 0.04), 0 20px 48px rgba(140, 106, 74, 0.08);
+  --shadow-input-focus: 0 0 0 4px rgba(191, 154, 120, 0.15);
+  
+  --border-radius-lg: 20px;
+  --border-radius-md: 12px;
+  --border-radius-sm: 8px;
+}
+
+/* ==========================================================================
+   RESET & CONFIGURAÇÕES BÁSICAS
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   ELEMENTOS DECORATIVOS DE FUNDO (DUNAS EM CSS)
+   ========================================================================== */
+.decor-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(circle at 10% 20%, #fcfaf7 0%, var(--bg-page) 90%);
+}
+
+/* Formas fluídas imitando dunas de areia suaves */
+.sand-dune {
+  position: absolute;
+  border-radius: 43% 57% 41% 59% / 60% 40% 60% 40%;
+  filter: blur(80px);
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.dune-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--color-primary-light) 0%, rgba(244, 234, 224, 0) 70%);
+  top: -200px;
+  right: -100px;
+  animation: floatDune 20s infinite alternate ease-in-out;
+}
+
+.dune-2 {
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, #f0e6d6 0%, rgba(240, 230, 214, 0) 70%);
+  bottom: -300px;
+  left: -200px;
+  animation: floatDune 25s infinite alternate-reverse ease-in-out;
+}
+
+.dune-3 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #ebdcc8 0%, rgba(235, 220, 200, 0) 70%);
+  top: 40%;
+  left: 30%;
+  opacity: 0.3;
+}
+
+@keyframes floatDune {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  100% { transform: translate(40px, 30px) rotate(15deg) scale(1.08); }
+}
+
+/* ==========================================================================
+   CONTAINER DO CARD DE LOGIN
+   ========================================================================== */
+.login-wrapper {
+  width: 100%;
+  max-width: 480px;
+  padding: 24px;
+  z-index: 10;
+  animation: fadeInCard 0.8s var(--transition-slow);
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 48px 40px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+/* Detalhe estético: borda superior sutil com gradiente de areia */
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary), var(--color-accent));
+}
+
+/* ==========================================================================
+   CABEÇALHO DO CARD (LOGO E TÍTULOS)
+   ========================================================================== */
+.login-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.logo-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  background-color: var(--bg-page);
+  border-radius: var(--border-radius-md);
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(140, 106, 74, 0.05);
+  animation: logoFloat 4s ease-in-out infinite;
+}
+
+.logo-svg {
+  width: 40px;
+  height: 40px;
+  transition: var(--transition-fast);
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.login-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   CAMPOS DE ENTRADA (FORM INPUTS COM FLOATING LABEL)
+   ========================================================================== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-relative {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Input Minimalista Moderno */
+.form-input {
+  width: 100%;
+  padding: 22px 48px 8px 48px; /* Espaço para ícone à esquerda, olho à direita e label no topo */
+  background: var(--bg-input);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  transition: var(--transition-normal);
+}
+
+/* Ícone de campo na esquerda */
+.input-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  transition: var(--transition-fast);
+}
+
+.input-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Botão de Exibição da Senha */
+.btn-toggle-password {
+  position: absolute;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.btn-toggle-password:hover {
+  color: var(--color-primary-dark);
+  background-color: var(--color-primary-light);
+}
+
+.btn-toggle-password svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Efeito Floating Label Moderno */
+.form-label {
+  position: absolute;
+  left: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  pointer-events: none;
+  transition: var(--transition-normal);
+}
+
+/* Quando o input estiver focado ou com conteúdo */
+.form-input:focus ~ .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label {
+  top: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Estados do Input (Hover e Focus) */
+.form-input:hover {
+  border-color: #d1c0a8;
+}
+
+.form-input:focus {
+  border-color: var(--border-focus);
+  background-color: #ffffff;
+  box-shadow: var(--shadow-input-focus);
+}
+
+.form-input:focus ~ .input-icon {
+  color: var(--color-primary-dark);
+}
+
+/* Input Inválido */
+.form-input.input-invalid {
+  border-color: var(--error-color) !important;
+  background-color: #fffaf9;
+}
+
+.form-input.input-invalid ~ .input-icon {
+  color: var(--error-color);
+}
+
+/* Mensagem de Erro */
+.error-message {
+  font-size: 0.78rem;
+  color: var(--error-color);
+  margin-top: 5px;
+  margin-left: 4px;
+  display: none;
+  font-weight: 500;
+  animation: slideInDown 0.3s var(--transition-fast);
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   AÇÕES AUXILIARES (CHECKBOX & LINK DE RECUPERAÇÃO)
+   ========================================================================== */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+/* Checkbox Customizado */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.custom-checkbox {
+  position: relative;
+  height: 18px;
+  width: 18px;
+  background-color: var(--bg-input);
+  border: 1.5px solid var(--border-color);
+  border-radius: 5px;
+  margin-right: 8px;
+  transition: var(--transition-fast);
+}
+
+.checkbox-container:hover input ~ .custom-checkbox {
+  border-color: var(--color-primary);
+}
+
+.checkbox-container input:checked ~ .custom-checkbox {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.custom-checkbox::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-container input:checked ~ .custom-checkbox::after {
+  display: block;
+}
+
+.checkbox-label {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.checkbox-container:hover .checkbox-label {
+  color: var(--text-main);
+}
+
+/* Link de Esqueceu a Senha */
+.forgot-password-link {
+  font-size: 0.88rem;
+  color: var(--text-link);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.forgot-password-link:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   BOTÃO DE SUBMIT (ENTRAR COM ANIMAÇÃO DE LOADING)
+   ========================================================================== */
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--color-primary-dark);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-normal);
+  box-shadow: 0 4px 14px rgba(140, 106, 74, 0.2);
+  margin-top: 10px;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(191, 154, 120, 0.3);
+}
+
+.btn-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loader Estilizado */
+.btn-text {
+  transition: var(--transition-fast);
+}
+
+.btn-loader {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0;
+  transition: var(--transition-fast);
+}
+
+/* Estado de Carregamento Ativo */
+.btn-submit.btn-loading .btn-text {
+  opacity: 0;
+}
+
+.btn-submit.btn-loading .btn-loader {
+  opacity: 1;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   DIVISOR SOCIAL
+   ========================================================================== */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 28px 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1.5px solid var(--border-color);
+}
+
+.divider:not(:empty)::before {
+  margin-right: 12px;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 12px;
+}
+
+/* ==========================================================================
+   BOTÕES DE LOGIN SOCIAL (GOOGLE E APPLE)
+   ========================================================================== */
+.social-login-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.btn-social:hover {
+  background-color: var(--bg-page);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.btn-social:active {
+  transform: translateY(0);
+}
+
+.social-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ==========================================================================
+   RODAPÉ DO CARD
+   ========================================================================== */
+.login-footer {
+  text-align: center;
+}
+
+.login-footer p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.register-link {
+  color: var(--text-link);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.register-link:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE ADAPTABILITY)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 32px 24px;
+    border-radius: var(--border-radius-md);
+  }
+  
+  .login-title {
+    font-size: 1.6rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .forgot-password-link {
+    margin-left: 2px;
+  }
+}
